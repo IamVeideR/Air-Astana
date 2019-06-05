@@ -2,44 +2,78 @@ body {
 }
 
 body * {
+    font-family: Helvetica;
+    transition-duration: 0.2s;
 }
 
 a {
 }
 
 p {
+    color: white;
 }
 
-h1 {
+h1,h2 {
+    font-family: DaxPro;
+    text-align: center;
+    text-transform: uppercase;
+}
+h2 {
+    color: #383838;
+    font-size: 24px;
 }
 
 .base-button {
-}
+    color: white;
+    background-color: $gold;
+    width: 248px;
+    height: 48px;
+    text-align: center;
+    line-height: 48px;
+    font-size: 18px;
+    font-family: DaxPro;
+    text-transform: uppercase;
 
-.base-button:hover {
-}
-
-.container {
-    // margin: 0 auto;
-    // max-width: 1160px;
-    // width: 100%;
-    // box-sizing: border-box;
-}
-
-.active {
-}
-
-
-@media (max-width: $desktop) {
-    .container {
-        padding-right: 15px;
-        padding-left: 15px;
+    &:hover {
+        background-color: white;
+        color: $gold;
     }
 }
 
-@media (max-width: $mobileL) {
+.close-button {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    .shp0 { 
+        fill: $dark-gold;        
+    } 
+    &:hover {
+        .shp0 { 
+            fill: white;
+        } 
+    }
+}
+
+
+.container {
+    margin: 0 auto;
+    max-width: 1120px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: $desktop) {
     .container {
-        padding-right: 5px;
-        padding-left: 5px;
+        padding-right: 25px;
+        padding-left: 25px;
+    }
+}
+
+@media (max-width: $mobile) {
+    .container {
+        padding-right: 15px;
+        padding-left: 15px;
     }
 }

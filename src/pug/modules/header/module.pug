@@ -1,0 +1,33 @@
+header.header
+    .header--top
+        .header--top__container.container
+            .header__languages
+                ul.languages__list
+                    li.languages__item #[a(href='#') Eng]
+                    li.languages__item #[a(href='#').languages__item--active Рус]
+                    li.languages__item #[a(href='#') Deu]
+                    li.languages__item #[a(href='#') Uk]
+    .header--bottom
+        .header--bottom__container.container
+            a(href='index.html').header__logo
+            .header__menu
+                ul.menu__list
+                    li.menu__item(class=(activePage=='about-prizes') ? 'page-active':'') #[a.menu__link(href='about-prizes.html') О призах]
+                    li.menu__item(class=(activePage=='terms-of-action') ? 'page-active':'') #[a.menu__link(href='terms-of-action.html') Условия акции]
+                    li.menu__item(class=(activePage=='test') ? 'page-active':'') #[a.menu__link(href='test.html') Тест]
+            .header__dropdown
+                svg(class='svg-dropdown' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%")
+                    g(id="Layer")
+                        path(id="Layer" class="shp0" d="M491.32 235.32L20.68 235.32C9.26 235.32 0 244.58 0 256C0 267.42 9.26 276.68 20.68 276.68L491.32 276.68C502.74 276.68 512 267.42 512 256C512 244.58 502.74 235.32 491.32 235.32Z")
+                    g(id="Layer")
+                        path(id="Layer" class="shp0" d="M491.32 78.44L20.68 78.44C9.26 78.44 0 87.7 0 99.12C0 110.54 9.26 119.8 20.68 119.8L491.32 119.8C502.74 119.8 512 110.54 512 99.12C512 87.7 502.74 78.44 491.32 78.44Z")
+                    g(id="Layer")
+                        path(id="Layer" class="shp0" d="M491.32 392.2L20.68 392.2C9.26 392.2 0 401.46 0 412.88C0 424.3 9.26 433.56 20.68 433.56L491.32 433.56C502.74 433.56 512 424.3 512 412.88C512 401.46 502.74 392.2 491.32 392.2Z")
+                svg(class='svg-close' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 470" width="80%" height="80%")
+                    g(id="Layer")
+                        path(id="Layer" class="shp0" d="M285.37 234.69L459.36 60.7C473.26 46.82 473.26 24.3 459.36 10.42C445.48 -3.47 422.98 -3.47 409.09 10.42L235.09 184.42L61.08 10.42C47.22 -3.47 24.69 -3.47 10.81 10.42C-3.07 24.3 -3.07 46.82 10.81 60.7L184.82 234.69L10.42 409.08C-3.47 422.98 -3.47 445.48 10.42 459.36C17.36 466.31 26.46 469.78 35.57 469.78C44.66 469.78 53.76 466.31 60.7 459.36L235.09 284.97L409.09 458.96C416.04 465.9 425.13 469.39 434.23 469.39C443.32 469.39 452.42 465.9 459.36 458.96C473.26 445.08 473.26 422.58 459.36 408.69L285.37 234.69Z")
+        .header__menu--mobile
+            ul.menu__list
+                li.menu__item(class=(activePage=='about-prizes') ? 'page-active':'') #[a.menu__link.container(href='about-prizes.html') О призах]
+                li.menu__item(class=(activePage=='terms-of-action') ? 'page-active':'') #[a.menu__link.container(href='terms-of-action.html') Условия акции]
+                li.menu__item(class=(activePage=='test') ? 'page-active':'') #[a.menu__link.container(href='test.html') Тест]

@@ -1,0 +1,21 @@
+extends ../layout/base
+
+block variables
+    - pageTitle = 'Air Astana | Обратная связь' 
+    - activePage = 'feedback'
+    - header = true
+    - footer = true
+    - cookies = true
+block content
+    main
+        section.feedback
+            .feedback__container.container
+                h2.feedback__title Связаться С Нами
+                form(action="index.html").feedback__form
+                    input(type='text' placeholder='Имя' name="feedback-name").feedback__input
+                    input(type='text' placeholder='E-mail' name="feedback-name").feedback__input
+                    input(type='text' placeholder='Фамилия' name="feedback-surname").feedback__input
+                    input(type='text' placeholder='Телефон' name="feedback-phone").feedback__input
+                    textarea(type='textarea' placeholder='Ваше сообщение' name="feedback-message").feedback__textarea
+                    p.feedback__text Все поля обязательные
+                    button(type='submit').feedback__button.base-button Отправить

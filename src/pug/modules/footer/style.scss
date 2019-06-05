@@ -1,0 +1,125 @@
+.footer {
+    color: white;
+    background-color: $blue;
+
+    &__container {
+        height: 405px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    &__logo {
+        background: url(./../img/logo-text-white.png) center no-repeat;
+        background-size: contain;
+        width: 190px;
+        height: 55px;
+    }
+    &__menu {
+        margin-top: 60px;
+        margin-bottom: 50px;
+
+        .menu {
+            &__list {
+                display: flex;
+            }
+            &__item {
+                margin: 0  35px;
+                
+                a {
+                    padding: 5px;
+                    color: white;
+                    font-size: 18px;
+
+                &:hover {
+                    color: $gold;
+                }
+                }
+            }
+        }
+    }
+    &__socials {
+        margin-bottom: 50px;
+
+        .socials {
+            &__list {
+                display: flex;
+            }
+            &__item { 
+                margin: 0 10px;     
+
+                a {
+                    width: 44px;
+                    height: 44px;
+                    border-radius: 22px;
+                    background-color: $gold;
+                    display: flex;
+                    align-items: center;
+                    background-position: center;
+                    background-repeat: no-repeat;
+
+                    &:hover {
+                        background-color: $light-gray;
+                    }  
+                }
+                
+            }
+        }
+    }
+    &__copyright {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: $tablet) {
+    .footer {
+        &__container {
+            height: 495px;
+        }
+        &__logo {
+            width: 130px;
+            height: 36px;
+        }
+        &__menu {
+            margin-top: 30px;
+            margin-bottom: 30px;
+    
+            .menu {
+                &__list {
+                    display: flex;
+                    flex-direction: column;
+                }
+                &__item {
+                    margin: 25px 0;
+                    text-align: center;
+                }
+            }
+        }
+        &__socials {
+            margin-bottom: 50px;
+    
+            .socials {
+                &__list {
+                    display: flex;
+                }
+                &__item { 
+                    margin: 0 7px;     
+
+                    a {
+                        width: 38px;
+                        height: 38px;
+                        border-radius: 19px;
+                        background-size: 50%;
+                    }
+                    
+                    
+                }
+                &__item:nth-child(3) { 
+                    a {
+                        background-size: 35%
+                    }
+                }
+            }
+        }
+    }
+}

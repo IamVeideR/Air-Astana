@@ -1,0 +1,101 @@
+.cookies {
+    width: 100%;
+    background-color: $gray;
+    position: fixed;
+    z-index: 4;
+    left: 0;
+    bottom: 0;
+
+    &__container {
+        height: 154px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        padding-bottom: 20px;
+        position: relative;
+    }
+    &__text {
+        font-family: DaxPro;
+        width: 60%;
+        padding: 0 70px;
+
+        a {
+            color: $blue;
+            font-family: DaxPro;
+
+            &:hover {
+                color: $dark-gold;
+            }
+        }
+    }
+    &__button {
+        color: white;
+        background-color: $blue;
+        width: 136px;
+        height: 50px;
+        line-height: 50px;
+        font-family: DaxPro;
+        text-transform: uppercase;
+
+        &:hover {
+            background-color: $gold;
+            color: white;
+        }
+
+    }
+    &__close {
+        position: absolute;
+        top: 20px;
+        right: 0px;
+    }
+}
+@media (max-width: $desktop) {
+    .cookies {    
+        &__text {
+            width: 70%;
+            padding: 0;
+            padding-right: 70px;
+        }
+        &__close {
+            top: 15px;
+            right: 25px;
+        }
+        &__button {
+            margin: 0 auto;
+        }
+    }
+}
+
+@media (max-width: $tablet) {
+    .cookies {    
+        &__container {
+            height: 200px;
+        }
+        &__text {
+            width: 100%;
+            padding: 40px;
+        }
+        &__close {
+            top: 15px;
+            right: 25px;
+        }
+    }
+}
+
+@media (max-width: $mobile) {
+    .cookies {    
+        &__container {
+            padding-bottom: 10px;
+            padding-top: 35px;
+        }
+        &__text {
+            padding: 0px;
+            font-size: 14px;
+        }
+        &__close {
+            top: 10px;
+            right: 15px;
+        }
+    }
+}

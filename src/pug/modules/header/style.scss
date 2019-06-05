@@ -1,0 +1,204 @@
+.header {
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    
+    &--top {
+        background-color: $blue;
+
+        &__container {
+            height: 33px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+    }
+    &--bottom {
+        &__container {
+            height: 57px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .page-active {
+                a {
+                    color: $blue!important;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    &__languages {
+        .languages {
+            &__list {
+                display: flex;
+            }
+            &__item {
+                padding: 3px;
+                margin-left: 35px;
+                
+                &--active {
+                    opacity: 1!important;
+                }
+                a { 
+                    color: white;
+                    opacity: 0.5;
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+    &__menu {
+        .menu {
+            &__list {
+                display: flex;
+            }
+            &__item {
+                padding: 5px;
+                margin-left: 70px;
+                
+                &--active {
+                    color: $blue;
+                }
+                a {
+                    color: $dark-gray;
+                    &:hover {
+                        color: $gold;
+                    }
+                }
+            }
+        }
+        &--mobile {
+            display: none;
+
+            .menu {
+                &__list {
+                    background-color: white;
+
+                    .page-active {
+                        a {
+                            color: $blue!important;
+                            font-weight: bold;
+                        }
+                    }
+                }
+                &__item {
+                    padding: 54px 0px;
+                    border-bottom: 1px solid $light-gray;
+                    
+                    &--active {
+                        color: $blue;
+                    }
+                    a {
+                        color: $gray;
+                        font-size: 18px;
+
+                        &:hover {
+                            color: $gold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__dropdown {
+        display: none;
+
+        .svg-close {
+            display: none;
+        }
+        
+    }
+    &__logo {
+        background: url(./../img/logo-text.png) center no-repeat;
+        background-size: contain;
+        width: 160px;
+        height: 45px;
+    }
+}
+
+@media (max-width: $tablet) {
+    .header {
+        &__menu {
+            display: none;
+
+            &--mobile {
+                position: fixed;
+                z-index: 5;
+                top: 90px;
+                left: 0;
+                height: 100vh;
+                background-color: rgba(0,0,0,0.5);
+                width: 100%;
+            }
+        }
+        &__dropdown {
+            display: block;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            &--opened {
+                width: 24px;
+                height: 24px;
+                .svg-close {
+                    display: block;
+                }
+                .svg-dropdown {
+                    display: none;
+                }
+            }
+
+            .shp0 { 
+                fill: $dark-gold;        
+            } 
+            &:hover {
+                .shp0 { 
+                    fill: $blue;
+                } 
+            }
+        }
+    }
+}
+
+@media (max-width: $mobile) {
+    .header {
+        &__menu {
+            &--mobile {
+                top: 77px;
+            }
+        }
+        &--top {
+            &__container {
+                height: 29px;
+            }
+        }
+        &--bottom {
+            &__container {
+                height: 48px;
+            }
+        }
+        &__logo {
+            width: 110px;
+            height: 32px;
+        }
+        &__dropdown {
+            width: 24px;
+            height: 24px;
+
+            &--opened {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        .languages {
+            &__item {
+                font-size: 14px;
+                margin-left: 12px;
+            }
+        }
+    }
+}

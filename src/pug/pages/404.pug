@@ -1,0 +1,13 @@
+extends ../layout/base
+
+block variables
+    - pageTitle = 'Air Astana | 404' 
+    - activePage = '404-page'
+block content
+    main
+        section.page-404
+            .page-404__container.container
+                p.page-404__error Ошибка
+                p.page-404__404 404
+                a(href="index.html").page-404__logo
+                a(href="index.html").page-404__back На Главную
