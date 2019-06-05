@@ -1,0 +1,23 @@
+extends ../layout/base
+
+block variables
+    - pageTitle = 'Air Astana | Сообщение' 
+    - activePage = 'mailing'
+block content
+    main
+        section.mailing
+            .mailing__top-block
+            .mailing__logo-block
+                a(href='index.html').mailing__logo
+            .mailing__content
+                p.mailing__title Поздравляем!
+                p.mailing__text Вы успешно зарегистрировались и теперь участвуете в конкурсе! Ваш номер:
+                p.mailing__number 57
+                p.mailing__wishes Желаем удачи!
+            .mailing__socials
+                ul.socials__list
+                    li.socials__item #[a.socials__link(href='#' style='background-image: url(static/img/twitter-logo.png);')]
+                    li.socials__item #[a.socials__link(href='#' style='background-image: url(static/img/instagram-logo.png);')]
+                    li.socials__item #[a.socials__link(href='#' style='background-image: url(static/img/facebook-logo.png);')]
+                    li.socials__item #[a.socials__link(href='#' style='background-image: url(static/img/youtube-logo.png);')]
+                    li.socials__item #[a.socials__link(href='#' style='background-image: url(static/img/linkedin-logo.png);')]
