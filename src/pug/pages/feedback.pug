@@ -11,11 +11,21 @@ block content
         section.feedback
             .feedback__container.container
                 h2.feedback__title Связаться С Нами
-                form(action="index.html").feedback__form
-                    input(type='text' placeholder='Имя' name="feedback-name").feedback__input
-                    input(type='text' placeholder='E-mail' name="feedback-name").feedback__input
-                    input(type='text' placeholder='Фамилия' name="feedback-surname").feedback__input
-                    input(type='text' placeholder='Телефон' name="feedback-phone").feedback__input
-                    textarea(type='textarea' placeholder='Ваше сообщение' name="feedback-message").feedback__textarea
+                form.feedback__form( onsubmit='return false')
+                    .feedback__block
+                        input(type='text' placeholder='Имя' name="feedback-name").feedback__input
+                        .feedback__error причина ошибки
+                    .feedback__block
+                        input(type='text' placeholder='E-mail' name="feedback-name").feedback__input
+                        .feedback__error причина ошибки
+                    .feedback__block
+                        input(type='text' placeholder='Фамилия' name="feedback-surname").feedback__input
+                        .feedback__error причина ошибки
+                    .feedback__block
+                        input(type='text' placeholder='Телефон' name="feedback-phone").feedback__input
+                        .feedback__error причина ошибки
+                    .feedback__block.feedback__blockarea
+                        textarea(type='textarea' placeholder='Ваше сообщение' name="feedback-message").feedback__textarea
+                        .feedback__error причина ошибки
                     p.feedback__text Все поля обязательные
-                    button(type='submit').feedback__button.base-button Отправить
+                    button.feedback__button.base-button Отправить
