@@ -63,14 +63,29 @@
       <section class="feedback">
         <div class="feedback__container container">
           <h2 class="feedback__title">Связаться С Нами</h2>
-          <form class="feedback__form" action="index.html">
-            <input class="feedback__input" type="text" placeholder="Имя" name="feedback-name">
-            <input class="feedback__input" type="text" placeholder="E-mail" name="feedback-name">
-            <input class="feedback__input" type="text" placeholder="Фамилия" name="feedback-surname">
-            <input class="feedback__input" type="text" placeholder="Телефон" name="feedback-phone">
-            <textarea class="feedback__textarea" type="textarea" placeholder="Ваше сообщение" name="feedback-message"></textarea>
+          <form class="feedback__form" onsubmit="return false">
+            <div class="feedback__block">
+              <input class="feedback__input" type="text" placeholder="Имя" name="feedback-name">
+              <div class="feedback__error">причина ошибки</div>
+            </div>
+            <div class="feedback__block">
+              <input class="feedback__input" type="text" placeholder="E-mail" name="feedback-name">
+              <div class="feedback__error">причина ошибки</div>
+            </div>
+            <div class="feedback__block">
+              <input class="feedback__input" type="text" placeholder="Фамилия" name="feedback-surname">
+              <div class="feedback__error">причина ошибки</div>
+            </div>
+            <div class="feedback__block">
+              <input class="feedback__input" type="text" placeholder="Телефон" name="feedback-phone">
+              <div class="feedback__error">причина ошибки</div>
+            </div>
+            <div class="feedback__block feedback__blockarea">
+              <textarea class="feedback__textarea" type="textarea" placeholder="Ваше сообщение" name="feedback-message"></textarea>
+              <div class="feedback__error">причина ошибки</div>
+            </div>
             <p class="feedback__text">Все поля обязательные</p>
-            <button class="feedback__button base-button" type="submit">Отправить</button>
+            <button class="feedback__button base-button">Отправить</button>
           </form>
         </div>
       </section>
@@ -80,7 +95,7 @@
         <div class="footer__menu">
           <ul class="menu__list">
             <li class="menu__item"><a class="menu__link" href="terms-of-action.html">Подробные условия акции</a></li>
-            <li class="menu__item"><a class="menu__link" href="connect.html">Связаться с нами</a></li>
+            <li class="menu__item"><a class="menu__link" href="feedback.html">Связаться с нами</a></li>
             <li class="menu__item"><a class="menu__link" href="https://airastana.com">airastana.com</a></li>
           </ul>
         </div>
