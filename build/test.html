@@ -398,9 +398,57 @@
             <p class="result__success--text">Поздравляем, Вы ответили правильно на вопросы! Пожалуйста, заполните небольшую форму, чтобы принять участие в розыгрыше поездки в Казахстан!</p>
             <p class="result__success--text">Победитель будет определен ..... числа методом генерации случайных чисел.</p>
             <p class="result__success--text">Желаем вам удачи!</p>
+            <canvas id="drawing_canvas"></canvas>
           </div>
         </div>
-        <div class="result__right"></div>
+        <div class="result__right"><a class="result__failure" href="test.html"> 
+            <div class="failure__text">Играть снова</div>
+            <div class="failure__restart"></div></a>
+          <div class="result__success" onsubmit="return false;">
+            <form class="success__form">
+              <div class="success__block">
+                <input class="success__input" type="text" placeholder="Имя" name="success-name">
+                <div class="success__error">причина ошибки</div>
+              </div>
+              <div class="success__block">
+                <input class="success__input" type="text" placeholder="Фамилия" name="success-surname">
+                <div class="success__error">причина ошибки</div>
+              </div>
+              <div class="success__block">
+                <input class="success__input" type="text" placeholder="Дата рождения" name="success-birthday">
+                <div class="success__error">причина ошибки</div>
+              </div>
+              <div class="success__block">
+                <input class="success__input" type="text" placeholder="Страна" name="success-country">
+                <div class="success__error">причина ошибки</div>
+              </div>
+              <div class="success__block">
+                <input class="success__input" type="text" placeholder="Город" name="success-city">
+                <div class="success__error">причина ошибки                                 </div>
+              </div>
+              <div class="success__block">                               
+                <input class="success__input" type="text" placeholder="Домашний адрес" name="success-address">
+                <div class="success__error">причина ошибки                                    </div>
+              </div>
+              <div class="success__block">
+                <input class="success__input" type="text" placeholder="Телефон" name="success-phone">
+                <div class="success__error">причина ошибки                                 </div>
+              </div>
+              <div class="success__block">                               
+                <input class="success__input" type="text" placeholder="E-mail" name="success-name">
+                <div class="success__error">причина ошибки</div>
+              </div>
+              <p class="success__text">Согласны ли вы получать новости авиакомпании Air Astana?</p>
+              <div class="success__block"> 
+                <input type="radio" name="news" id="news-yes" value="1">
+                <label for="news-yes">Да</label>
+                <input type="radio" name="news" id="news-no" value="2">
+                <label for="news-no">Нет</label>
+              </div>
+              <button class="success__button base-button">Отправить</button>
+            </form>
+          </div>
+        </div>
       </section>
     </main>
     <footer class="footer">
@@ -436,6 +484,8 @@
         </div>
       </div>
     </div>
+    <script src="static/js/jquery.js"></script>
+    <script src="static/js/jquery.scrollify.js"></script>
     <script src="static/js/main.js"></script>
   </body>
 </html>

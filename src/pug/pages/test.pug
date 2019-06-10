@@ -302,4 +302,41 @@ block content
                             p.result__success--text Поздравляем, Вы ответили правильно на вопросы! Пожалуйста, заполните небольшую форму, чтобы принять участие в розыгрыше поездки в Казахстан!
                             p.result__success--text Победитель будет определен ..... числа методом генерации случайных чисел.
                             p.result__success--text Желаем вам удачи!
+                            canvas(id="drawing_canvas")
                     .result__right
+                        a(href='test.html').result__failure 
+                            .failure__text Играть снова
+                            .failure__restart
+                        .result__success(onsubmit='return false;')
+                            form.success__form
+                                .success__block
+                                    input(type='text' placeholder='Имя' name="success-name").success__input
+                                    .success__error причина ошибки
+                                .success__block
+                                    input(type='text' placeholder='Фамилия' name="success-surname").success__input
+                                    .success__error причина ошибки
+                                .success__block
+                                    input(type='text' placeholder='Дата рождения' name="success-birthday").success__input
+                                    .success__error причина ошибки
+                                .success__block
+                                    input(type='text' placeholder='Страна' name="success-country").success__input
+                                    .success__error причина ошибки
+                                .success__block
+                                    input(type='text' placeholder='Город' name="success-city").success__input  
+                                    .success__error причина ошибки                                 
+                                .success__block                                
+                                    input(type='text' placeholder='Домашний адрес' name="success-address").success__input
+                                    .success__error причина ошибки                                    
+                                .success__block
+                                    input(type='text' placeholder='Телефон' name="success-phone").success__input  
+                                    .success__error причина ошибки                                 
+                                .success__block                                
+                                    input(type='text' placeholder='E-mail' name="success-name").success__input
+                                    .success__error причина ошибки
+                                p.success__text Согласны ли вы получать новости авиакомпании Air Astana?
+                                .success__block 
+                                    input(type="radio" name="news" id="news-yes" value="1")
+                                    label(for="news-yes") Да
+                                    input(type="radio" name="news" id="news-no" value="2")
+                                    label(for="news-no") Нет
+                                button.success__button.base-button Отправить
