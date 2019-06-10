@@ -1,0 +1,166 @@
+extends ../layout/base
+
+block variables
+    - pageTitle = 'Air Astana | Выбор Победителя' 
+    - activePage = 'random'
+    - header = true
+    - footer = true
+block content
+    main
+        section.random
+            h2.random__title Пришло время вырать победителя!
+            .random__button.base-button Запустить
+            .random__container.container
+                .random__participant
+                    .random__name Камиля Козганбаева
+                    .random__number 105698
+                .random__participant
+                    .random__name Екатерина Витковская
+                    .random__number 105698
+                .random__participant
+                    .random__name Александр Долгополов
+                    .random__number 105698
+                .random__participant
+                    .random__name Гарик Оганесян
+                    .random__number 105698
+                .random__participant
+                    .random__name Руслан Газиев
+                    .random__number 105698
+                .random__participant
+                    .random__name Алексей Квашонкин
+                    .random__number 105698
+                .random__participant
+                    .random__name Асылжан Кудайбергенов
+                    .random__number 105698
+                .random__participant
+                    .random__name Камиля Козганбаева
+                    .random__number 105698
+                .random__participant
+                    .random__name Гарик Оганесян
+                    .random__number 105698
+                .random__participant
+                    .random__name Камиля Козганбаева
+                    .random__number 105698
+                .random__participant
+                    .random__name Екатерина Витковская
+                    .random__number 105698
+                .random__participant
+                    .random__name Руслан Газиев
+                    .random__number 105698
+                .random__participant
+                    .random__name Камиля Козганбаева
+                    .random__number 105698
+                .random__participant
+                    .random__name Алексей Квашонкин
+                    .random__number 105698
+                .random__participant
+                    .random__name Гарик Оганесян
+                    .random__number 105698
+                .random__participant
+                    .random__name Асылжан Кудайбергенов
+                    .random__number 105698
+                .random__participant
+                    .random__name Екатерина Витковская
+                    .random__number 105698
+                .random__participant
+                    .random__name Камиля Козганбаева
+                    .random__number 105698
+                .random__participant
+                    .random__name Александр Долгополов
+                    .random__number 105698
+                .random__participant
+                    .random__name Гарик Оганесян
+                    .random__number 105698
+                .random__participant
+                    .random__name Алексей Квашонкин
+                    .random__number 105698
+                .random__participant
+                    .random__name Екатерина Витковская
+                    .random__number 105698
+                .random__participant
+                    .random__name Александр Долгополов
+                    .random__number 105698
+                .random__participant
+                    .random__name Асылжан Кудайбергенов
+                    .random__number 105698
+                .random__participant
+                    .random__name Камиля Козганбаева
+                    .random__number 105698
+                .random__participant
+                    .random__name Екатерина Витковская
+                    .random__number 105698
+                .random__participant
+                    .random__name Александр Долгополов
+                    .random__number 105698
+                .random__participant
+                    .random__name Гарик Оганесян
+                    .random__number 105698
+                .random__participant
+                    .random__name Руслан Газиев
+                    .random__number 105698
+                .random__participant
+                    .random__name Алексей Квашонкин
+                    .random__number 105698
+                .random__participant
+                    .random__name Асылжан Кудайбергенов
+                    .random__number 105698
+                .random__participant
+                    .random__name Камиля Козганбаева
+                    .random__number 105698
+                .random__participant
+                    .random__name Гарик Оганесян
+                    .random__number 105698
+                .random__participant
+                    .random__name Камиля Козганбаева
+                    .random__number 105698
+                .random__participant
+                    .random__name Екатерина Витковская
+                    .random__number 105698
+                .random__participant
+                    .random__name Руслан Газиев
+                    .random__number 105698
+                .random__participant
+                    .random__name Камиля Козганбаева
+                    .random__number 105698
+                .random__participant
+                    .random__name Алексей Квашонкин
+                    .random__number 105698
+                .random__participant
+                    .random__name Гарик Оганесян
+                    .random__number 105698
+                .random__participant
+                    .random__name Асылжан Кудайбергенов
+                    .random__number 105698
+                .random__participant
+                    .random__name Екатерина Витковская
+                    .random__number 105698
+                .random__participant
+                    .random__name Камиля Козганбаева
+                    .random__number 105698
+                .random__participant
+                    .random__name Александр Долгополов
+                    .random__number 105698
+                .random__participant
+                    .random__name Гарик Оганесян
+                    .random__number 105698
+                .random__participant
+                    .random__name Алексей Квашонкин
+                    .random__number 105698
+                .random__participant
+                    .random__name Екатерина Витковская
+                    .random__number 105698
+                .random__participant
+                    .random__name Александр Долгополов
+                    .random__number 105698
+                .random__participant
+                    .random__name Асылжан Кудайбергенов
+                    .random__number 105698
+        section.random--result
+            .container    
+                h2.random--result__text Наш Победитель
+                h2.random--result__number 000000
+                h2.random--result__name Name Surname
+                h2.random--result__title поздравляем!
+                h2.random--result__title Вы получаете проживание в курортном отеле rixos боровое!
+                p.random--result__more Наш менеджер свяжется с Вами для подробной информации
+            canvas(id="drawing_canvas")

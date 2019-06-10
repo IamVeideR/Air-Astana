@@ -11,12 +11,12 @@ block content
         section.feedback
             .feedback__container.container
                 h2.feedback__title Связаться С Нами
-                form.feedback__form( onsubmit='return false')
+                form.feedback__form(onsubmit='return false;')
                     .feedback__block
                         input(type='text' placeholder='Имя' name="feedback-name").feedback__input
                         .feedback__error причина ошибки
                     .feedback__block
-                        input(type='text' placeholder='E-mail' name="feedback-name").feedback__input
+                        input(type='text' placeholder='E-mail' name="feedback-mail").feedback__input
                         .feedback__error причина ошибки
                     .feedback__block
                         input(type='text' placeholder='Фамилия' name="feedback-surname").feedback__input
