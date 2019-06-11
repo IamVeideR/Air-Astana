@@ -142,29 +142,23 @@ let firework = () => {
         drawingCanvas = document.getElementById("drawing_canvas"),
         ctx,
         timeStep = (1/60);
-
     if(drawingCanvas) {
         Point = function(x, y) {
             this.x = x || 0;
             this.y = y || 0;
         };
-    
         Particle = function(p0, p1, p2, p3) {
             this.p0 = p0;
             this.p1 = p1;
             this.p2 = p2;
             this.p3 = p3;
-    
             this.time = 0;
             this.duration = 3 + Math.random() * 2;
             this.color =  '#' + Math.floor((Math.random() * 0xffffff)).toString(16);
-    
             this.w = 8;
             this.h = 6;
-    
             this.complete = false;
         };
-    
         Particle.prototype = {
             update:function() {
                 this.time = Math.min(this.duration, this.time + timeStep);
@@ -443,75 +437,16 @@ let testFeedback = () => {
 }
 testFeedback();
 
-// $(document).bind( 'mousewheel', function (e) { 
-//     var nt = $(document.body).scrollTop()-(e.deltaY*e.deltaFactor*100); 
-//     e.preventDefault(); 
-//     e.stopPropagation(); 
-//     $(document.body).stop().animate( { 
-//          scrollTop : nt 
-//      } , 500 , 'easeInOutCubic' );  
-// } );
-// window.addEventListener('touchstart', e => e.preventDefault(), { passive: false });
-// $(function() {
-//     $.scrollify({
-//         section : ".scroll-slide",
-//     });
-//     });
-$(document).ready(function() {
-
-    $('body').smoothScroll({
-      delegateSelector: 'ul.mainnav a'
-    });
-
-    $('p.subnav a').click(function(event) {
-      event.preventDefault();
-      var link = this;
-      $.smoothScroll({
-        scrollTarget: link.hash
-      });
-    });
-
-    $('#change-speed').bind('click', function() {
-      var $p1 = $('ul.mainnav a').first();
-      var p1Opts = $p1.smoothScroll('options') || {};
-
-      p1Opts.speed = p1Opts.speed === 1400 ? 400 : 1400;
-      $p1.smoothScroll('options', p1Opts);
-    });
-
-    $('button.scrollsomething').bind('click', function(event) {
-      event.preventDefault();
-      $.smoothScroll({
-        scrollElement: $('div.scrollme'),
-        scrollTarget: '#findme'
-      });
-    });
-    $('button.scrollhorz').bind('click', function(event) {
-      event.preventDefault();
-      $.smoothScroll({
-        direction: 'left',
-        scrollElement: $('div.scrollme'),
-        scrollTarget: '.horiz'
-      });
-
-    });
-
-    $('#scroll-relative-plus').on('click', function() {
-      var wHeight = $(window).height();
-      $.smoothScroll('+=100px');
-    });
-    $('#scroll-relative-minus').on('click', function() {
-      $.smoothScroll('-=100px');
-    });
-    $('.header--top').on('click', function() {
-      var wHeight = $(window).height();
-      var wWidth = $(window).width();
-      var rel = $(this).hasClass('down') ? '+=' : '-=';
-
-      if (wWidth <= 560) {
-        wHeight -= 130;
-      }
-
-      $.smoothScroll(rel + wHeight);
-    });
-  });
+let scroll = () => {
+    let main = document.getElementsByClassName('main-page')[0];
+    if(main) {
+        $(function() {
+            $.scrollify({
+              section : ".scroll-slide",
+              setHeights: false,
+              scrollSpeed: 1500,
+            });
+        });
+    }
+}
+scroll();
