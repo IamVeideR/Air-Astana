@@ -8,7 +8,10 @@ html(lang="ru")
         - var pageTitle
         - var activePage
         title= pageTitle
-        link(href="static/css/main.css", rel="stylesheet") 
+        //- link(href=(activePage=='main')? "static/css/onepage-scroll.css":'', rel="stylesheet" )
+        link(rel="stylesheet" type="text/css" href="static/css/slick.css")
+        link(rel="stylesheet" type="text/css" href="static/css/slick-theme.css")
+        link(href="static/css/main.css", rel="stylesheet")
         link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous")
     body
         if header
@@ -21,5 +24,6 @@ html(lang="ru")
         block scripts
         script(src="static/js/jquery.js")
         script(src="static/js/jquery.scrollify.js")
+        script(type="text/javascript" src="static/js/slick.min.js")
         script(src="static/js/main.js")
         
