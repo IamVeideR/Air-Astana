@@ -4,6 +4,8 @@ body {
 body * {
     font-family: Helvetica;
     transition-duration: 0.2s;
+    outline: none;
+    user-select: none; 
 }
 
 a {
