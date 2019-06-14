@@ -1,6 +1,6 @@
 .header {
     position: fixed;
-    z-index: 7;
+    z-index: 15;
     width: 100%;
     top: 0;
     left: 0;
@@ -78,6 +78,7 @@
             .menu {
                 &__list {
                     background-color: white;
+                    height: calc(100vh - 77px );
 
                     .page-active {
                         a {
@@ -87,7 +88,10 @@
                     }
                 }
                 &__item {
-                    padding: 54px 0px;
+                    height: 33%;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
                     border-bottom: 1px solid $light-gray;
                     
                     &--active {
@@ -128,7 +132,7 @@
 
             &--mobile {
                 position: fixed;
-                z-index: 7;
+                z-index: 15; 
                 top: 90px;
                 left: 0;
                 height: 100vh;

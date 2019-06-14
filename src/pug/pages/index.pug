@@ -9,7 +9,7 @@ block variables
 
 block content  
     main.main-page
-        section.scroll-slide.top-slide
+        section.scroll-slide.top-slide.section(data-anchor="firstPage")
             .top__image
             .top__container.container
                 .top__block 
@@ -18,35 +18,48 @@ block content
                     p.top__text Путешествие в Казахстан станет для вас незабываемым опытом. Познайте тайны Востока, найдите себя в затерянных красотах Борового и исследуйте сердце бескрайней степи — Нур-Султан вместе с Air Astana! 
                     a(href='test.html').top__button.base-button Пройти тест
         //- .middle-1__video
-        //-             iframe(width="100%" height="100%" src="https://www.youtube.com/embed/yBVptjY8G5A?&rel=0&showinfo=0" loop="1" frameborder="0" autoplay="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+        //-             //- iframe(width="100%" height="100%" src="https://www.youtube.com/embed/yBVptjY8G5A?&rel=0&showinfo=0" loop="1" frameborder="0" autoplay="1" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
         //-             .middle-1__close.close-button
         //-                 svg(class='svg-close' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 470" width="100%" height="100%")
         //-                     g(id="Layer")
         //-                         path(id="Layer" class="shp0" d="M285.37 234.69L459.36 60.7C473.26 46.82 473.26 24.3 459.36 10.42C445.48 -3.47 422.98 -3.47 409.09 10.42L235.09 184.42L61.08 10.42C47.22 -3.47 24.69 -3.47 10.81 10.42C-3.07 24.3 -3.07 46.82 10.81 60.7L184.82 234.69L10.42 409.08C-3.47 422.98 -3.47 445.48 10.42 459.36C17.36 466.31 26.46 469.78 35.57 469.78C44.66 469.78 53.76 466.31 60.7 459.36L235.09 284.97L409.09 458.96C416.04 465.9 425.13 469.39 434.23 469.39C443.32 469.39 452.42 465.9 459.36 458.96C473.26 445.08 473.26 422.58 459.36 408.69L285.37 234.69Z")
-        section.scroll-slide.middle-slide
-            .middle-1
+        section.scroll-slide.middle-slide.section(data-anchor="secondPage")
+            input(type="radio" id="i1" name="images" checked)
+            input(type="radio" id="i2" name="images")
+            input(type="radio" id="i3" name="images")
+            .middle-1.slide_img(id="middle-one").slide
                 .middle-1__image
-                .middle-1__slides.container 
-                    .middle-1--block
+                .middle-1__container.container 
+                    input(type="radio" id="t1" name="texts" checked)
+                    input(type="radio" id="t2" name="texts")
+                    .middle-1--block.slide_img.slide_img--1(id="middle1-one")
+                        label(class="prev" for="k7") #[span]
+                        label(class="next" for="t2") #[span]
                         .middle-1__container.container
                             h2.middle-1__title.middle-1__title--center Ответь правильно на 7 вопросов и выиграй ...
-                    .middle-1--block
+                    .middle-1--block.slide_img.slide_img--1(id="middle1-two")
+                        label(class="prev" for="t1") #[span]
+                        label(class="next" for="i2") #[span]
                         .middle-1__container.middle-1__container--2.container                    
                             .middle-1__block
                                 h2.middle-1__title.middle-1__title--desktop Перелет бизнес-классом
                                 h2.middle-1__title.middle-1__title--desktop Air Astana
                                 h2.middle-1__title.middle-1__title--mobile Перелет бизнес-классом Air Astana
                                 .middle-1__text Air Astana — лучшая авиакомпания Центральной Азии и Индии по версии Skytrax и победитель премии Trevelers’Choice Awards 2019 в номинациях «Региональный азиатский перевозчик» и «Пассажирский комфорт в Азии». Флот авиакомпании состоит из 33 современных самолетов, выполняющих полеты по 67 направлениям.
-            .middle-2
+            .middle-2.slide_img(id="middle-two").slide
                 .middle-2__image
                 .middle-2__container.container
+                    label(class="prev" for="i1") #[span]
+                    label(class="next" for="i3") #[span]
                     .middle-2__block
                         h2.middle-2__title Проживание 
                         h2.middle-2__title в Нур-Султане  
                         .middle-2__text Нур-Султан — молодая и современная столица Казахстана, которая не оставит вас равнодушным.
-            .middle-3
+            .middle-3.slide_img(id="middle-three").slide
                 .middle-3__image
                 .middle-3__container.container
+                    label(class="prev" for="i2") #[span]
+                    label(class="next" for="k7") #[span]
                     .middle-3__block
                         h2.middle-3__title Проживание 
                         h2.middle-3__title в курортном отеле 
@@ -57,7 +70,7 @@ block content
                         h2.middle-3__title в курортном отеле 
                         h2.middle-3__title Rixos Borovoe 
                         .middle-3__text Пятизвездочный отель Rixos Borovoe находится на берегу невероятно красивого озера в окружении березовых и сосновых лесов. Отель располагает всеми удобствами для отдыха: бассейном, спа-центром, ресторанами и барами.
-        section.scroll-slide.bottom-slide
+        section.scroll-slide.bottom-slide.section(data-anchor="thirdPage")
             .bottom__image
             .bottom__container.container
                 .bottom__slides
