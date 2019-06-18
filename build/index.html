@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Air Astana</title>
-    <link rel="stylesheet" type="text/css" href="static/css/slick.css">
-    <link rel="stylesheet" type="text/css" href="static/css/slick-theme.css">
+    <link rel="icon" href="static/img/icon.png" type="image/x-icon">
     <link href="static/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/css/fullPage.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   </head>
   <body>
@@ -28,8 +28,8 @@
         <div class="header--bottom__container container"><a class="header__logo" href="index.html"></a>
           <div class="header__menu">
             <ul class="menu__list">
-              <li class="menu__item"><a class="menu__link" href="about-prizes.html">О призах</a></li>
-              <li class="menu__item"><a class="menu__link" href="terms-of-action.html">Условия акции</a></li>
+              <li class="menu__item"><a class="menu__link" href="index.html#secondPage">О призах</a></li>
+              <li class="menu__item"><a class="menu__link" href="index.html#thirdPage">Условия акции</a></li>
               <li class="menu__item"><a class="menu__link" href="test.html">Тест</a></li>
             </ul>
           </div>
@@ -62,7 +62,7 @@
       </div>
     </header>
     <main class="main-page">
-      <section class="scroll-slide top-slide">
+      <section class="scroll-slide top-slide section" data-anchor="firstPage">
         <div class="top__image"></div>
         <div class="top__container container">
           <div class="top__block"> 
@@ -72,16 +72,25 @@
           </div>
         </div>
       </section>
-      <section class="scroll-slide middle-slide">
-        <div class="middle-1">
+      <section class="scroll-slide middle-slide section" data-anchor="secondPage">
+        <input type="radio" id="i1" name="images" checked>
+        <input type="radio" id="i2" name="images">
+        <input type="radio" id="i3" name="images">
+        <div class="middle-1 slide_img slide" id="middle-one">
           <div class="middle-1__image"></div>
-          <div class="middle-1__slides container"> 
-            <div class="middle-1--block">
+          <div class="middle-1__container container"> 
+            <input type="radio" id="t1" name="texts" checked>
+            <input type="radio" id="t2" name="texts">
+            <div class="middle-1--block slide_img slide_img--1" id="middle1-one">
+              <label class="prev" for="k7"><span></span></label>
+              <label class="next" for="t2"><span></span></label>
               <div class="middle-1__container container">
                 <h2 class="middle-1__title middle-1__title--center">Ответь правильно на 7 вопросов и выиграй ...</h2>
               </div>
             </div>
-            <div class="middle-1--block">
+            <div class="middle-1--block slide_img slide_img--1" id="middle1-two">
+              <label class="prev" for="t1"><span></span></label>
+              <label class="next" for="i2"><span></span></label>
               <div class="middle-1__container middle-1__container--2 container">                   
                 <div class="middle-1__block">
                   <h2 class="middle-1__title middle-1__title--desktop">Перелет бизнес-классом</h2>
@@ -93,9 +102,11 @@
             </div>
           </div>
         </div>
-        <div class="middle-2">
+        <div class="middle-2 slide_img slide" id="middle-two">
           <div class="middle-2__image"></div>
           <div class="middle-2__container container">
+            <label class="prev" for="i1"><span></span></label>
+            <label class="next" for="i3"><span></span></label>
             <div class="middle-2__block">
               <h2 class="middle-2__title">Проживание </h2>
               <h2 class="middle-2__title">в Нур-Султане  </h2>
@@ -103,9 +114,11 @@
             </div>
           </div>
         </div>
-        <div class="middle-3">
+        <div class="middle-3 slide_img slide" id="middle-three">
           <div class="middle-3__image"></div>
           <div class="middle-3__container container">
+            <label class="prev" for="i2"><span></span></label>
+            <label class="next" for="k7"><span></span></label>
             <div class="middle-3__block">
               <h2 class="middle-3__title">Проживание </h2>
               <h2 class="middle-3__title">в курортном отеле </h2>
@@ -121,7 +134,7 @@
           </div>
         </div>
       </section>
-      <section class="scroll-slide bottom-slide">
+      <section class="scroll-slide bottom-slide section" data-anchor="thirdPage">
         <div class="bottom__image"></div>
         <div class="bottom__container container">
           <div class="bottom__slides">
@@ -179,7 +192,7 @@
             <li class="socials__item"><a class="socials__link" href="#" style="background-image: url(static/img/linkedin-logo.png);"></a></li>
           </ul>
         </div>
-        <div class="footer__copyright">&#169airastana 2019</div>
+        <div class="footer__copyright">&#169 airastana 2019</div>
       </div>
     </footer>
     <div class="cookies">
@@ -195,8 +208,7 @@
       </div>
     </div>
     <script src="static/js/jquery.js"></script>
-    <script src="static/js/jquery.scrollify.js"></script>
-    <script type="text/javascript" src="static/js/slick.min.js"></script>
+    <script src="static/js/jquery.fullPage.min.js"></script>
     <script src="static/js/main.js"></script>
   </body>
 </html>
