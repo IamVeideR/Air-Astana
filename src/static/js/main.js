@@ -26,28 +26,28 @@ let header = () => {
     }
 }
 header();
-window.addEventListener("scroll", function() {
-    let item = document.getElementsByClassName('menu__item');
-    // alert(document.body.scrollHeight/(3-1)-400);
-    for(let i = 0;i < 2;i++) {
-        if ( window.pageYOffset > (document.body.scrollHeight-400-((document.body.scrollHeight-400)/3)*(3-i))) {
-            for(let j = 0;j <= i;j++) {
-                if (i==j) {
-                    item[j].classList.add('page-active');
-                    item[j+3].classList.add('page-active');
-                } else {
-                    item[j].classList.remove('page-active');
-                    item[j+3].classList.remove('page-active');
-                }
-            }
-        } else {
-            for(let j = 0;j <= i;j++) {
-                item[j].classList.remove('page-active');
-                item[j+3].classList.remove('page-active');
-            }
-        }
-    }
-}, false);
+// window.addEventListener("scroll", function() {
+//     let item = document.getElementsByClassName('menu__item');
+//     // alert(document.body.scrollHeight/(3-1)-400);
+//     for(let i = 0;i < 2;i++) {
+//         if ( window.pageYOffset > (document.body.scrollHeight-400-((document.body.scrollHeight-400)/3)*(3-i))) {
+//             for(let j = 0;j <= i;j++) {
+//                 if (i==j) {
+//                     item[j].classList.add('page-active');
+//                     item[j+3].classList.add('page-active');
+//                 } else {
+//                     item[j].classList.remove('page-active');
+//                     item[j+3].classList.remove('page-active');
+//                 }
+//             }
+//         } else {
+//             for(let j = 0;j <= i;j++) {
+//                 item[j].classList.remove('page-active');
+//                 item[j+3].classList.remove('page-active');
+//             }
+//         }
+//     }
+// }, false);
 
 
 let cookies = () => {
