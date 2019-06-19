@@ -168,6 +168,7 @@ let test = () => {
     }
 }
 test();
+
  let firework = (amount) => { 
     const TWO_PI = Math.PI * 2;
     const HALF_PI = Math.PI * 0.5;
@@ -621,40 +622,6 @@ $(document).ready(function(){
     }); 
 });
 
-window.addEventListener("scroll", function() {
-    let item = document.getElementsByClassName('menu__item');
-    let block = document.getElementsByClassName('bottom__slides')[0];
-    if (( window.pageYOffset > (document.body.scrollHeight-500)/3)&&(window.pageYOffset < (document.body.scrollHeight-500)/1.5)) {
-        $('.middle-1__container').slick('slickPlay');
-        for(let j = 0;j <= 2;j++) {
-            item[j].classList.remove('page-active');
-            item[j+3].classList.remove('page-active');
-        }
-        item[0].classList.add('page-active');
-        item[3].classList.add('page-active');
-    } else if ( window.pageYOffset > (document.body.scrollHeight-500)/1.5) {
-        for(let j = 0;j <= 2;j++) {
-            item[j].classList.remove('page-active');
-            item[j+3].classList.remove('page-active');
-        }
-        window.onscroll = () => {
-            $('.bottom__slides').slick('slickNext');
-        }  
-        window.onkeydown = () => {
-            if(event.keyCode==40) {
-                $('.bottom__slides').slick('slickNext');
-            }
-        }
-        item[1].classList.add('page-active');
-        item[4].classList.add('page-active');
-    } else if ( window.pageYOffset < (document.body.scrollHeight-500)/3) {
-            for(let j = 0;j <= 2;j++) {
-                item[j].classList.remove('page-active');
-                item[j+3].classList.remove('page-active');
-            }
-        }
-}, false);
-
 let scroll = () => {
     let  $fullpage = $('.main-page');
     if($fullpage[0]){
@@ -669,3 +636,40 @@ let scroll = () => {
     }   
 }
 scroll();
+
+window.addEventListener("scroll", function() {
+    let item = document.getElementsByClassName('menu__item');
+    let block = document.getElementsByClassName('bottom__slides')[0];
+    let bottom = document.getElementsByClassName('bottom-slide')[0];
+    if (( window.pageYOffset > (document.body.scrollHeight-500)/3)&&(window.pageYOffset < (document.body.scrollHeight-500)/1.5)) {
+        $('.middle-1__container').slick('slickPlay');
+        for(let j = 0;j <= 2;j++) {
+            item[j].classList.remove('page-active');
+            item[j+3].classList.remove('page-active');
+            $('.bottom__slides').slick('slickPrev');
+        }
+        item[0].classList.add('page-active');
+        item[3].classList.add('page-active');
+    } else if ( window.pageYOffset > (document.body.scrollHeight-500)/1.5) {
+        for(let j = 0;j <= 2;j++) {
+            item[j].classList.remove('page-active');
+            item[j+3].classList.remove('page-active');
+        }
+        window.onkeydown = () => {
+            if(event.keyCode==40) {
+                $('.bottom__slides').slick('slickNext');
+            }
+        }
+        block.onclick = () => {
+            $('.bottom__slides').slick('slickNext');
+        }
+        item[1].classList.add('page-active');
+        item[4].classList.add('page-active');
+    } else if ( window.pageYOffset < (document.body.scrollHeight-500)/3) {
+            for(let j = 0;j <= 2;j++) {
+                item[j].classList.remove('page-active');
+                item[j+3].classList.remove('page-active');
+            }
+        }
+}, false);
+

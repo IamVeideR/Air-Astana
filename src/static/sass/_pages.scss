@@ -309,9 +309,6 @@
             justify-content: center;
             flex-wrap: wrap;
         }
-        &__slides {
-            width: 100%;
-        }
         &__image {
             background: url(./../img/main-bottom.jpg) center 25% no-repeat;
             background-size: cover;
@@ -323,6 +320,7 @@
             z-index: -1;
         }
         &__slides {
+            width: 100%;
             margin-bottom: 50px;
             padding-top: 60px;
             height: 380px;
