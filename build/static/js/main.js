@@ -47,6 +47,7 @@ let cookies = () => {
 cookies();
 
 let test = () => {
+    let test = document.getElementsByClassName('test')[0];
     let section = document.getElementsByClassName('test');
     let casual = document.getElementsByClassName('test__casual');
     let next = document.getElementsByClassName('test__next');
@@ -61,7 +62,7 @@ let test = () => {
     let failure = document.getElementsByClassName('result__failure')[0];
     let counter = 0;
 
-    if (section) {
+    if (test) {
         for(let i = 0;i < section.length;i++) {
             next[i].onclick = () => {
                 document.body.scrollTop = document.documentElement.scrollTop = 0;
