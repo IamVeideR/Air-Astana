@@ -8,6 +8,8 @@
     <link rel="icon" href="static/img/icon.png" type="image/x-icon">
     <link href="static/css/main.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="static/css/fullPage.css">
+    <link rel="stylesheet" type="text/css" href="static/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="static/css/slick-theme.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   </head>
   <body>
@@ -54,8 +56,8 @@
         </div>
         <div class="header__menu--mobile">
           <ul class="menu__list">
-            <li class="menu__item"><a class="menu__link container" href="about-prizes.html">О призах</a></li>
-            <li class="menu__item"><a class="menu__link container" href="terms-of-action.html">Условия акции</a></li>
+            <li class="menu__item"><a class="menu__link container" href="index.html#secondPage">О призах</a></li>
+            <li class="menu__item"><a class="menu__link container" href="index.html#thirdPage">Условия акции</a></li>
             <li class="menu__item"><a class="menu__link container" href="test.html">Тест</a></li>
           </ul>
         </div>
@@ -73,63 +75,69 @@
         </div>
       </section>
       <section class="scroll-slide middle-slide section" data-anchor="secondPage">
-        <input type="radio" id="i1" name="images" checked>
-        <input type="radio" id="i2" name="images">
-        <input type="radio" id="i3" name="images">
-        <div class="middle-1 slide_img slide" id="middle-one">
-          <div class="middle-1__image"></div>
-          <div class="middle-1__container container"> 
-            <input type="radio" id="t1" name="texts" checked>
-            <input type="radio" id="t2" name="texts">
-            <div class="middle-1--block slide_img slide_img--1" id="middle1-one">
-              <label class="prev" for="k7"><span></span></label>
-              <label class="next" for="t2"><span></span></label>
-              <div class="middle-1__container container">
-                <h2 class="middle-1__title middle-1__title--center">Ответь правильно на 7 вопросов и выиграй ...</h2>
-              </div>
+        <div class="middle-1__video">
+          <div class="middle-1__close close-button">
+            <svg class="svg-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 470" width="100%" height="100%">
+              <g id="Layer">
+                <path class="shp0" id="Layer" d="M285.37 234.69L459.36 60.7C473.26 46.82 473.26 24.3 459.36 10.42C445.48 -3.47 422.98 -3.47 409.09 10.42L235.09 184.42L61.08 10.42C47.22 -3.47 24.69 -3.47 10.81 10.42C-3.07 24.3 -3.07 46.82 10.81 60.7L184.82 234.69L10.42 409.08C-3.47 422.98 -3.47 445.48 10.42 459.36C17.36 466.31 26.46 469.78 35.57 469.78C44.66 469.78 53.76 466.31 60.7 459.36L235.09 284.97L409.09 458.96C416.04 465.9 425.13 469.39 434.23 469.39C443.32 469.39 452.42 465.9 459.36 458.96C473.26 445.08 473.26 422.58 459.36 408.69L285.37 234.69Z"></path>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <div class="middle-slider slide">
+          <div class="middle-1 slide_img">
+            <div class="middle-1__image">
+              <video class="video" width="100%" height="100%" poster="static/img/main-middle-3.jpg" autoplay muted loop>
+                <source src="http://techslides.com/demos/sample-videos/small.mp4" type="video/mp4">
+              </video>
             </div>
-            <div class="middle-1--block slide_img slide_img--1" id="middle1-two">
-              <label class="prev" for="t1"><span></span></label>
-              <label class="next" for="i2"><span></span></label>
-              <div class="middle-1__container middle-1__container--2 container">                   
-                <div class="middle-1__block">
-                  <h2 class="middle-1__title middle-1__title--desktop">Перелет бизнес-классом</h2>
-                  <h2 class="middle-1__title middle-1__title--desktop">Air Astana</h2>
-                  <h2 class="middle-1__title middle-1__title--mobile">Перелет бизнес-классом Air Astana</h2>
-                  <div class="middle-1__text">Air Astana — лучшая авиакомпания Центральной Азии и Индии по версии Skytrax и победитель премии Trevelers’Choice Awards 2019 в номинациях «Региональный азиатский перевозчик» и «Пассажирский комфорт в Азии». Флот авиакомпании состоит из 33 современных самолетов, выполняющих полеты по 67 направлениям.</div>
+            <div class="middle-1__container container"> 
+              <div class="middle-1--slider">
+                <div class="middle-1--block">
+                  <h2 class="middle-1__title middle-1__title--center">Ответь правильно на 7 вопросов и выиграй ...</h2>
+                </div>
+              </div>
+              <div class="middle-1--slider">
+                <div class="middle-1--block middle-1__container--2">                   
+                  <div class="middle-1__block">
+                    <h2 class="middle-1__title middle-1__title--desktop">Перелет бизнес-классом</h2>
+                    <h2 class="middle-1__title middle-1__title--desktop">Air Astana</h2>
+                    <h2 class="middle-1__title middle-1__title--mobile">Перелет бизнес-классом Air Astana</h2>
+                    <div class="middle-1__text">Air Astana — лучшая авиакомпания Центральной Азии и Индии по версии Skytrax и победитель премии Trevelers’Choice Awards 2019 в номинациях «Региональный азиатский перевозчик» и «Пассажирский комфорт в Азии». Флот авиакомпании состоит из 33 современных самолетов, выполняющих полеты по 67 направлениям.</div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="middle-2 slide_img slide" id="middle-two">
-          <div class="middle-2__image"></div>
-          <div class="middle-2__container container">
-            <label class="prev" for="i1"><span></span></label>
-            <label class="next" for="i3"><span></span></label>
-            <div class="middle-2__block">
-              <h2 class="middle-2__title">Проживание </h2>
-              <h2 class="middle-2__title">в Нур-Султане  </h2>
-              <div class="middle-2__text">Нур-Султан — молодая и современная столица Казахстана, которая не оставит вас равнодушным.</div>
+        <div class="middle-slider slide">
+          <div class="middle-2">
+            <div class="middle-2__image"></div>
+            <div class="middle-2__container container">
+              <div class="middle-2__block">
+                <h2 class="middle-2__title">Проживание </h2>
+                <h2 class="middle-2__title">в Нур-Султане  </h2>
+                <div class="middle-2__text">Нур-Султан — молодая и современная столица Казахстана, которая не оставит вас равнодушным.</div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="middle-3 slide_img slide" id="middle-three">
-          <div class="middle-3__image"></div>
-          <div class="middle-3__container container">
-            <label class="prev" for="i2"><span></span></label>
-            <label class="next" for="k7"><span></span></label>
-            <div class="middle-3__block">
-              <h2 class="middle-3__title">Проживание </h2>
-              <h2 class="middle-3__title">в курортном отеле </h2>
-              <h2 class="middle-3__title">Rixos Borovoe </h2>
-            </div>
-            <div class="middle-3__text">Пятизвездочный отель Rixos Borovoe находится на берегу невероятно красивого озера в окружении березовых и сосновых лесов. Отель располагает всеми удобствами для отдыха: бассейном, спа-центром, ресторанами и барами.</div>
-            <div class="middle-3__block--mobile">
-              <h2 class="middle-3__title">Проживание </h2>
-              <h2 class="middle-3__title">в курортном отеле </h2>
-              <h2 class="middle-3__title">Rixos Borovoe </h2>
+        <div class="middle-slider slide">   
+          <div class="middle-3">
+            <div class="middle-3__image"></div>
+            <div class="middle-3__container container">
+              <div class="middle-3__block">
+                <h2 class="middle-3__title">Проживание </h2>
+                <h2 class="middle-3__title">в курортном отеле </h2>
+                <h2 class="middle-3__title">Rixos Borovoe </h2>
+              </div>
               <div class="middle-3__text">Пятизвездочный отель Rixos Borovoe находится на берегу невероятно красивого озера в окружении березовых и сосновых лесов. Отель располагает всеми удобствами для отдыха: бассейном, спа-центром, ресторанами и барами.</div>
+              <div class="middle-3__block--mobile">
+                <h2 class="middle-3__title">Проживание </h2>
+                <h2 class="middle-3__title">в курортном отеле </h2>
+                <h2 class="middle-3__title">Rixos Borovoe </h2>
+                <div class="middle-3__text">Пятизвездочный отель Rixos Borovoe находится на берегу невероятно красивого озера в окружении березовых и сосновых лесов. Отель располагает всеми удобствами для отдыха: бассейном, спа-центром, ресторанами и барами.</div>
+              </div>
             </div>
           </div>
         </div>
@@ -209,6 +217,7 @@
     </div>
     <script src="static/js/jquery.js"></script>
     <script src="static/js/jquery.fullPage.min.js"></script>
+    <script type="text/javascript" src="static/js/slick.min.js"></script>
     <script src="static/js/main.js"></script>
   </body>
 </html>

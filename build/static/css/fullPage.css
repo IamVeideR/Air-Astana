@@ -61,32 +61,87 @@ html.fp-enabled,
     position: relative;
 }
 .fp-controlArrow {
-    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
-    -moz-user-select: none; /* mozilla browsers */
-    -khtml-user-select: none; /* webkit (konqueror) browsers */
-    -ms-user-select: none; /* IE10+ */
     position: absolute;
-    z-index: 4;
     top: 50%;
+    width: 58px;
+    height: 58px;
+    border-radius: 30px;
+    border: 1px solid #ffffff;
+    z-index: 11;
+    transform: translate(0, -50%);
     cursor: pointer;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    margin-top: -38px;
-    -webkit-transform: translate3d(0,0,0);
-    -ms-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
+    color: transparent;
+    outline: none;
 }
-.fp-controlArrow.fp-prev {
-    left: 15px;
-    width: 0;
-    border-width: 38.5px 34px 38.5px 0;
-    border-color: transparent #fff transparent transparent;
+.fp-prev{
+    left: 5%;
 }
-.fp-controlArrow.fp-next {
-    right: 15px;
-    border-width: 38.5px 0 38.5px 34px;
-    border-color: transparent transparent transparent #fff;
+.fp-prev::before {
+    content: ''; 
+    position: absolute;
+    top: 24px;
+    width: 45px;
+    height: 10px;  
+    left: 40px;
+    background: url(./../img/arrow-left.png) center no-repeat;
+    background-size: contain;
+}
+.fp-next {
+    right: 5%;
+}
+.fp-next::before {
+    content: '';
+    position: absolute;
+    width: 45px;
+    height: 10px;  
+    top: 24px;
+    right: 40px;
+    background: url(./../img/arrow-right.png) center no-repeat;
+    background-size: contain;
+}
+.fp-prev:hover:before {
+    transform: translateX(-20px);
+    transition-duration: 0.3s;
+}
+.fp-next:hover:before {
+    transform: translateX(20px);
+    transition-duration: 0.3s;
+}
+@media (max-width: 768px) {
+    .fp-prev,
+    .fp-next {
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+    }
+    .fp-prev:before,
+    .fp-next:before {
+        top: 12px;
+    }
+    .fp-prev:hover:before {
+        transform: translateX(-8px);
+    }
+    .fp-next:hover:before {
+        transform: translateX(8px);
+    }
+    .fp-prev{
+        left: 15px;
+    }
+    .fp-prev:before {
+        top: 12px;
+        width: 25px;
+        height: 6px;  
+        left: 18px;
+    }
+    .fp-next {
+        right: 15px;
+    }
+    .fp-next:before {
+        top: 12px;
+        width: 25px;
+        height: 6px;  
+        right: 18px;
+    }
 }
 .fp-scrollable {
     overflow: hidden;
