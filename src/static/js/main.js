@@ -26,29 +26,6 @@ let header = () => {
     }
 }
 header();
-// window.addEventListener("scroll", function() {
-//     let item = document.getElementsByClassName('menu__item');
-//     // alert(document.body.scrollHeight/(3-1)-400);
-//     for(let i = 0;i < 2;i++) {
-//         if ( window.pageYOffset > (document.body.scrollHeight-400-((document.body.scrollHeight-400)/3)*(3-i))) {
-//             for(let j = 0;j <= i;j++) {
-//                 if (i==j) {
-//                     item[j].classList.add('page-active');
-//                     item[j+3].classList.add('page-active');
-//                 } else {
-//                     item[j].classList.remove('page-active');
-//                     item[j+3].classList.remove('page-active');
-//                 }
-//             }
-//         } else {
-//             for(let j = 0;j <= i;j++) {
-//                 item[j].classList.remove('page-active');
-//                 item[j+3].classList.remove('page-active');
-//             }
-//         }
-//     }
-// }, false);
-
 
 let cookies = () => {
     let close = document.getElementsByClassName('cookies__close')[0];
@@ -112,39 +89,52 @@ let test = () => {
                 }
             }
         }
-        for(let i = 0;i < casual.length;i++) {
-            casual[i].getElementsByClassName('test__item')[0].onclick = () => {
-                casual[i].classList.add('test--correct');
-                casual[i].getElementsByClassName('test__item')[0].classList.add('test__item--correct');
-                casual[i].getElementsByClassName('test__image')[0].style.backgroundImage = 'url(static/img/test-1-1.jpg)';
-                casual[i].getElementsByClassName('test__list--disabled')[0].style.display = 'block';   
-                text[i].classList.add('test__text--center');
+        let answers = (i,correct, incorrect, incorrect2) => {
+            casual[i-1].getElementsByClassName('test__item')[correct-1].onclick = () => {
+                casual[i-1].classList.add('test--correct');
+                casual[i-1].getElementsByClassName('test__item')[correct-1].classList.add('test__item--correct');
+                casual[i-1].getElementsByClassName('test__image')[0].style.backgroundImage = `url(static/img/test-${i}-${correct}.jpg)`;
+                casual[i-1].getElementsByClassName('test__list--disabled')[0].style.display = 'block';   
+                casual[i-1].getElementsByClassName('test__text')[0].classList.add('test__text--center');
                 counter++;
             }
-            casual[i].getElementsByClassName('test__item')[1].onclick = () => {
-                casual[i].classList.add('test--incorrect');
-                casual[i].getElementsByClassName('test__item')[1].classList.add('test__item--incorrect');
-                casual[i].getElementsByClassName('test__image')[0].style.backgroundImage = 'url(static/img/test-1.jpg)';
-                casual[i].getElementsByClassName('test__list--disabled')[0].style.display = 'block'; 
-                text[i].classList.remove('test__text--center');
+            casual[i-1].getElementsByClassName('test__item')[incorrect-1].onclick = () => {
+                casual[i-1].classList.add('test--incorrect');
+                casual[i-1].getElementsByClassName('test__item')[incorrect-1].classList.add('test__item--incorrect');
+                casual[i-1].getElementsByClassName('test__image')[0].style.backgroundImage = `url(static/img/test-${i}-${incorrect}.jpg)`;
+                casual[i-1].getElementsByClassName('test__list--disabled')[0].style.display = 'block'; 
+                casual[i-1].getElementsByClassName('test__text')[0].classList.remove('test__text--center');
             }
-            casual[i].getElementsByClassName('test__item')[2].onclick = () => {
-                casual[i].classList.add('test--incorrect');
-                casual[i].getElementsByClassName('test__item')[2].classList.add('test__item--incorrect');
-                casual[i].getElementsByClassName('test__image')[0].style.backgroundImage = 'url(static/img/test-1-3.jpg)';
-                casual[i].getElementsByClassName('test__list--disabled')[0].style.display = 'block'; 
-                text[i].classList.remove('test__text--center');
+            casual[i-1].getElementsByClassName('test__item')[incorrect2-1].onclick = () => {
+                casual[i-1].classList.add('test--incorrect');
+                casual[i-1].getElementsByClassName('test__item')[incorrect2-1].classList.add('test__item--incorrect');
+                casual[i-1].getElementsByClassName('test__image')[0].style.backgroundImage = `url(static/img/test-${i}-${incorrect2}.jpg)`;
+                casual[i-1].getElementsByClassName('test__list--disabled')[0].style.display = 'block'; 
+                casual[i-1].getElementsByClassName('test__text')[0].classList.remove('test__text--center');
             }
         }
+        answers(1,1,2,3);
+        answers(2,1,2,3);
+        answers(3,1,2,3);
+        answers(4,1,2,3);
+        answers(5,1,2,3);
         for(let i = 0;i < country.length;i++) {
             country[i].onclick = () => {  
                 if (country[i].getAttribute('aria-label') == 'Kazakhstan  ') {
                     counter++;
-                    let event = new Event("click");
-                    next[1].dispatchEvent(event);
+                    country[i].style.fill = '#006351';
+                    section[1].classList.add('test--correct');
+                    section[1].getElementsByClassName('test__list--disabled')[0].style.display = 'block';
+                    section[1].getElementsByClassName('test__text')[0].style.display = 'flex';
+                    section[1].getElementsByClassName('test__text')[0].classList.add('test__text--center');
+                    section[1].getElementsByClassName('test__another-text')[0].innerHTML = 'Поздравляем, у вас блестящие познания в географии!';
                 } else {
-                    let event = new Event("click");
-                    next[1].dispatchEvent(event);
+                    country[i].style.fill = '#910316';
+                    section[1].classList.add('test--incorrect');
+                    section[1].getElementsByClassName('test__list--disabled')[0].style.display = 'block';
+                    section[1].getElementsByClassName('test__text')[0].style.display = 'flex';
+                    section[1].getElementsByClassName('test__text')[0].classList.remove('test__text--center');
+                    section[1].getElementsByClassName('test__another-text')[0].innerHTML = 'Ой, а мы не здесь.';
                 }
             }
         }
@@ -152,11 +142,25 @@ let test = () => {
             flag[i].onclick = () => {  
                 if (i == 3) {
                     counter++;
-                    let event = new Event("click");
-                    next[2].dispatchEvent(event);
+                    section[2].classList.add('test--correct');
+                    section[2].getElementsByClassName('test__list--disabled')[0].style.display = 'block';
+                    section[2].getElementsByClassName('test__text')[0].style.display = 'flex';
+                    section[2].getElementsByClassName('test__text')[0].classList.add('test__text--center');
+                    section[2].getElementsByClassName('test__another-text')[0].innerHTML = 'Правда, красиво?';
                 } else {
-                    let event = new Event("click");
-                    next[2].dispatchEvent(event);
+                    section[2].classList.add('test--incorrect');
+                    section[2].getElementsByClassName('test__list--disabled')[0].style.display = 'block';
+                    section[2].getElementsByClassName('test__text')[0].style.display = 'flex';
+                    section[2].getElementsByClassName('test__text')[0].classList.remove('test__text--center');
+                    if (i==0) {
+                        section[2].getElementsByClassName('test__another-text')[0].innerHTML = 'Нет, это же флаг Вьетнама. А мы любим небо и орлов.'
+                    }
+                    if (i==2) {
+                        section[2].getElementsByClassName('test__another-text')[0].innerHTML = 'Нет, это же флаг Габона. А мы любим небо и орлов.'
+                    }
+                    if (i==1) {
+                        section[2].getElementsByClassName('test__another-text')[0].innerHTML = 'А это флаг Казахского ханства 1465–1847 гг. Сейчас мы любим небо и орлов.'
+                    }
                 }
             }
         }
@@ -437,7 +441,6 @@ test();
     initCanvas();
 }
 
-
 let random = () => {
     let button = document.getElementsByClassName('random__button')[0];
     let random = document.getElementsByClassName('random')[0];
@@ -550,33 +553,106 @@ let testFeedback = () => {
 }
 testFeedback();
 
-// let video = () => {
-//     let main = document.getElementsByClassName('main-page')[0];
-//     let video = document.getElementsByClassName('middle-1__video')[0];
-//     let close = document.getElementsByClassName('middle-1__close')[0];
-//     let open = document.getElementsByClassName('middle-1')[0];
-//     let label = document.getElementsByClassName('middle-1')[0].getElementsByTagName('label');
-//     if(main) {
-//         open.onclick = () => {
-//             for (let i = 0;i < label.length;i++) {
-//                 label[i].onclick = (e) => {
-//                     e.stopPropagation();
-//                 }
-//             }
-//             video.style.display = 'block';
-//         }
-//         document.onkeydown = (e) => {
-//             if (e.keyCode === 27) {
-//                 video.style.display = 'none';
-//             }
-//         }
-//         close.onclick = () => {
-//             video.style.display = 'none';
-//             // document.getElementsByTagName('iframe')[0].pause();
-//         }
-//     }        
-// }
-// video();
+let video = () => {
+    let main = document.getElementsByClassName('main-page')[0];
+    let video = document.getElementsByClassName('middle-1__video')[0];
+    let close = document.getElementsByClassName('middle-1__close')[0];
+    let open = document.getElementsByClassName('middle-1')[0];
+    let frame = document.createElement('iframe');
+
+    if(main) {
+        open.onclick = () => {
+            video.style.display = 'block';
+            let src = document.createAttribute('src');
+            src.value = 'https://www.youtube.com/embed/yBVptjY8G5A?&rel=0&showinfo=0';
+            frame.setAttributeNode(src);
+            video.appendChild(frame);
+
+        }
+        document.onkeydown = (e) => {
+            if (e.keyCode === 27) {
+                video.style.display = 'none';
+                frame.parentNode.removeChild(frame); 
+            }
+        }
+        close.onclick = () => {
+            frame.parentNode.removeChild(frame); 
+            video.style.display = 'none';
+            
+
+        }        
+    }        
+}
+video();
+
+$(document).ready(function(){
+    $('.middle-1__container').slick({
+        autoplay: false,
+        autoplaySpeed: 4000,
+        arrows: false,
+        draggable: false,
+        fade: true,
+        zIndex: 10,
+        speed: 600,
+        infinite: false,
+    }).on("afterChange", function(e, slick, cur) {
+        if( cur === slick.$slides.length-1 ) {
+            slick.setOption("autoplay", false, true);
+        }
+    }); 
+});
+
+$(document).ready(function(){
+    $('.bottom__slides').slick({
+        autoplay: false,
+        arrows: false,
+        draggable: true,
+        speed: 600,
+        zIndex: 10,
+        dots: true,
+        vertical: true,
+        verticalSwiping: true,
+        infinite: false,
+    }).on("afterChange", function(e, slick, cur) {
+        if( cur === slick.$slides.length-1 ) {
+            slick.setOption("autoplay", false, true);
+        }
+    }); 
+});
+
+window.addEventListener("scroll", function() {
+    let item = document.getElementsByClassName('menu__item');
+    let block = document.getElementsByClassName('bottom__slides')[0];
+    if (( window.pageYOffset > (document.body.scrollHeight-500)/3)&&(window.pageYOffset < (document.body.scrollHeight-500)/1.5)) {
+        $('.middle-1__container').slick('slickPlay');
+        for(let j = 0;j <= 2;j++) {
+            item[j].classList.remove('page-active');
+            item[j+3].classList.remove('page-active');
+        }
+        item[0].classList.add('page-active');
+        item[3].classList.add('page-active');
+    } else if ( window.pageYOffset > (document.body.scrollHeight-500)/1.5) {
+        for(let j = 0;j <= 2;j++) {
+            item[j].classList.remove('page-active');
+            item[j+3].classList.remove('page-active');
+        }
+        window.onscroll = () => {
+            $('.bottom__slides').slick('slickNext');
+        }  
+        window.onkeydown = () => {
+            if(event.keyCode==40) {
+                $('.bottom__slides').slick('slickNext');
+            }
+        }
+        item[1].classList.add('page-active');
+        item[4].classList.add('page-active');
+    } else if ( window.pageYOffset < (document.body.scrollHeight-500)/3) {
+            for(let j = 0;j <= 2;j++) {
+                item[j].classList.remove('page-active');
+                item[j+3].classList.remove('page-active');
+            }
+        }
+}, false);
 
 let scroll = () => {
     let  $fullpage = $('.main-page');
@@ -584,12 +660,10 @@ let scroll = () => {
         $fullpage.fullpage({
             anchors:['firstPage', 'secondPage', 'thirdPage'],
             autoScrolling: true,
-            navigation: true,
+            navigation: false,
             css3: true,
             scrollingSpeed: 1000,
             scrollBar: true,
-            slidesNavigation: true,
-            // scrollOverflow: true,
         });
     }   
 }
