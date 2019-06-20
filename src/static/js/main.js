@@ -554,6 +554,10 @@ let testFeedback = () => {
     }
 }
 testFeedback();
+$(function(){
+    $(".feedback__phone").mask("+9999999999?9");
+    $(".feedback__birthday").mask("99.99.9999", {placeholder: "дд.мм.гггг" });
+  });
 
 let video = () => {
     let main = document.getElementsByClassName('main-page')[0];
@@ -626,27 +630,29 @@ let scroll = () => {
     let  $fullpage = $('.main-page');
     if($fullpage[0]){
         $fullpage.fullpage({
-            anchors:['firstPage', 'secondPage', 'thirdPage'],
+            anchors:['1', '2', '3', 'footer'],
             autoScrolling: true,
             navigation: false,
             css3: true,
             scrollingSpeed: 1000,
             scrollBar: true,
-        });
-    }   
+            normalScrollElements: '.bottom-slide, .footer'
+        }); 
+    }
 }
 scroll();
 
 window.addEventListener("scroll", function() {
     let item = document.getElementsByClassName('menu__item');
-    let block = document.getElementsByClassName('bottom__slides')[0];
-    let bottom = document.getElementsByClassName('bottom-slide')[0];
+    let block = document.getElementsByClassName('bottom__slides');
+    let bottom1 = document.getElementsByClassName('bottom--block')[0];
+    let bottom2 = document.getElementsByClassName('bottom--block')[1];
+    if (block) {
     if (( window.pageYOffset > (document.body.scrollHeight-500)/3)&&(window.pageYOffset < (document.body.scrollHeight-500)/1.5)) {
         $('.middle-1__container').slick('slickPlay');
         for(let j = 0;j <= 2;j++) {
             item[j].classList.remove('page-active');
             item[j+3].classList.remove('page-active');
-            $('.bottom__slides').slick('slickPrev');
         }
         item[0].classList.add('page-active');
         item[3].classList.add('page-active');
@@ -658,10 +664,8 @@ window.addEventListener("scroll", function() {
         window.onkeydown = () => {
             if(event.keyCode==40) {
                 $('.bottom__slides').slick('slickNext');
+                
             }
-        }
-        block.onclick = () => {
-            $('.bottom__slides').slick('slickNext');
         }
         item[1].classList.add('page-active');
         item[4].classList.add('page-active');
@@ -671,5 +675,22 @@ window.addEventListener("scroll", function() {
                 item[j+3].classList.remove('page-active');
             }
         }
+        bottom1.onscroll = (event) => {
+            event.preventDefault;
+            $('.bottom__slides').slick('slickNext');
+            bottom2.scrollTop = 50;
+        }
+        bottom1.onclick = () => {
+            $('.bottom__slides').slick('slickNext');
+        }
+        bottom2.onscroll = (event) => {
+            event.preventDefault;
+            bottom1.scrollTop = 0;
+            $('.bottom__slides').slick('slickPrev');
+        }
+        bottom2.onclick = () => {
+            $('.bottom__slides').slick('slickPrev');
+        }
+    }
 }, false);
 
