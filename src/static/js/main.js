@@ -47,6 +47,7 @@ let cookies = () => {
 cookies();
 
 let test = () => {
+    let test = document.getElementsByClassName('test')[0];
     let section = document.getElementsByClassName('test');
     let casual = document.getElementsByClassName('test__casual');
     let next = document.getElementsByClassName('test__next');
@@ -61,7 +62,7 @@ let test = () => {
     let failure = document.getElementsByClassName('result__failure')[0];
     let counter = 0;
 
-    if (section) {
+    if (test) {
         for(let i = 0;i < section.length;i++) {
             next[i].onclick = () => {
                 document.body.scrollTop = document.documentElement.scrollTop = 0;
@@ -167,6 +168,7 @@ let test = () => {
     }
 }
 test();
+
  let firework = (amount) => { 
     const TWO_PI = Math.PI * 2;
     const HALF_PI = Math.PI * 0.5;
@@ -552,6 +554,10 @@ let testFeedback = () => {
     }
 }
 testFeedback();
+$(function(){
+    $(".feedback__phone").mask("+9999999999?9");
+    $(".feedback__birthday").mask("99.99.9999", {placeholder: "дд.мм.гггг" });
+  });
 
 let video = () => {
     let main = document.getElementsByClassName('main-page')[0];
@@ -620,9 +626,28 @@ $(document).ready(function(){
     }); 
 });
 
+let scroll = () => {
+    let  $fullpage = $('.main-page');
+    if($fullpage[0]){
+        $fullpage.fullpage({
+            anchors:['1', '2', '3', 'footer'],
+            autoScrolling: true,
+            navigation: false,
+            css3: true,
+            scrollingSpeed: 1000,
+            scrollBar: true,
+            normalScrollElements: '.bottom-slide, .footer'
+        }); 
+    }
+}
+scroll();
+
 window.addEventListener("scroll", function() {
     let item = document.getElementsByClassName('menu__item');
-    let block = document.getElementsByClassName('bottom__slides')[0];
+    let block = document.getElementsByClassName('bottom__slides');
+    let bottom1 = document.getElementsByClassName('bottom--block')[0];
+    let bottom2 = document.getElementsByClassName('bottom--block')[1];
+    if (block) {
     if (( window.pageYOffset > (document.body.scrollHeight-500)/3)&&(window.pageYOffset < (document.body.scrollHeight-500)/1.5)) {
         $('.middle-1__container').slick('slickPlay');
         for(let j = 0;j <= 2;j++) {
@@ -636,12 +661,10 @@ window.addEventListener("scroll", function() {
             item[j].classList.remove('page-active');
             item[j+3].classList.remove('page-active');
         }
-        window.onscroll = () => {
-            $('.bottom__slides').slick('slickNext');
-        }  
         window.onkeydown = () => {
             if(event.keyCode==40) {
                 $('.bottom__slides').slick('slickNext');
+                
             }
         }
         item[1].classList.add('page-active');
@@ -652,19 +675,22 @@ window.addEventListener("scroll", function() {
                 item[j+3].classList.remove('page-active');
             }
         }
+        bottom1.onscroll = (event) => {
+            event.preventDefault;
+            $('.bottom__slides').slick('slickNext');
+            bottom2.scrollTop = 50;
+        }
+        bottom1.onclick = () => {
+            $('.bottom__slides').slick('slickNext');
+        }
+        bottom2.onscroll = (event) => {
+            event.preventDefault;
+            bottom1.scrollTop = 0;
+            $('.bottom__slides').slick('slickPrev');
+        }
+        bottom2.onclick = () => {
+            $('.bottom__slides').slick('slickPrev');
+        }
+    }
 }, false);
 
-let scroll = () => {
-    let  $fullpage = $('.main-page');
-    if($fullpage[0]){
-        $fullpage.fullpage({
-            anchors:['firstPage', 'secondPage', 'thirdPage'],
-            autoScrolling: true,
-            navigation: false,
-            css3: true,
-            scrollingSpeed: 1000,
-            scrollBar: true,
-        });
-    }   
-}
-scroll();

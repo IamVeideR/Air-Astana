@@ -1,3 +1,7 @@
+.main-page {
+    height: 300vh!important;
+    overflow: hidden;
+}
 .top-slide {
     position: relative;
     overflow: hidden;
@@ -309,9 +313,6 @@
             justify-content: center;
             flex-wrap: wrap;
         }
-        &__slides {
-            width: 100%;
-        }
         &__image {
             background: url(./../img/main-bottom.jpg) center 25% no-repeat;
             background-size: cover;
@@ -323,9 +324,18 @@
             z-index: -1;
         }
         &__slides {
+            width: 100%;
             margin-bottom: 50px;
             padding-top: 60px;
             height: 380px;
+
+            ::-webkit-scrollbar{
+                width: 0px;
+            }
+            ::-webkit-scrollbar-thumb{
+                width: 0px;
+                border-radius: 0px;
+            }
         }
         &__1 {
             display: flex;
@@ -335,6 +345,24 @@
             margin: 0 auto;
             max-width: 960px;
             padding-bottom: 50px;
+            height: 100%;
+        }
+        &--block:first-child {
+            overflow: scroll;
+            height: 300px;
+            .some-piece {
+                height: 50px;
+                width: 100%;
+            }
+        }
+        
+        &--block:nth-child(2) {
+            overflow: scroll;
+            height: 300px;
+            .some-piece {
+                height: 50px;
+                width: 100%;
+            }
         }
         &__2 {
             display: flex;
@@ -1502,6 +1530,23 @@
             &__title {
                 font-size: 24px;
                 padding-bottom: 7vh;
+            }
+            &--block:first-child {
+                overflow: scroll;
+                height: initial;
+                .some-piece {
+                    height: 0px;
+                    width: 100%;
+                }
+            }
+            
+            &--block:nth-child(2) {
+                overflow: scroll;
+                height: initial;
+                .some-piece {
+                    height: 0px;
+                    width: 100%;
+                }
             }
             &__block {
                 width: 100%;
