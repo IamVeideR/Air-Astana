@@ -358,7 +358,7 @@
         
         &--block:nth-child(2) {
             overflow: scroll;
-            height: 305px;
+            height: 307px;
             .some-piece {
                 height: 50px;
                 width: 100%;
@@ -391,6 +391,9 @@
                 background: url(./../img/logo.png) center no-repeat;
                 background-size: contain;
             }
+            // &:nth-child(7),&:nth-child(8) {
+            //     padding-bottom: px;
+            // }
         }
         &__title {
             font-size: 42px;

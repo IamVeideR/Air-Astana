@@ -591,6 +591,22 @@ let video = () => {
 }
 video();
 
+let scroll = () => {
+    let  $fullpage = $('.main-page');
+    if($fullpage[0]){
+        $fullpage.fullpage({
+            anchors:['1', '2', '3', 'footer'],
+            autoScrolling: true,
+            navigation: false,
+            css3: true,
+            scrollingSpeed: 1000,
+            scrollBar: true,
+            normalScrollElements: '.bottom-slide',
+        }); 
+    }
+}
+scroll();
+
 $(document).ready(function(){
     $('.middle-1__container').slick({
         autoplay: false,
@@ -625,22 +641,6 @@ $(document).ready(function(){
         }
     }); 
 });
-
-let scroll = () => {
-    let  $fullpage = $('.main-page');
-    if($fullpage[0]){
-        $fullpage.fullpage({
-            anchors:['1', '2', '3', 'footer'],
-            autoScrolling: true,
-            navigation: false,
-            css3: true,
-            scrollingSpeed: 1000,
-            scrollBar: true,
-            normalScrollElements: '.bottom-slide, .footer'
-        }); 
-    }
-}
-scroll();
 
 window.addEventListener("scroll", function() {
     let item = document.getElementsByClassName('menu__item');
@@ -682,15 +682,24 @@ window.addEventListener("scroll", function() {
         }
         bottom1.onclick = () => {
             $('.bottom__slides').slick('slickNext');
+            bottom2.scrollTop = 50;
         }
-        bottom2.onscroll = (event) => {
+        bottom2.addEventListener("scroll", function(){
             event.preventDefault;
-            bottom1.scrollTop = 0;
-            $('.bottom__slides').slick('slickPrev');
-        }
+            let st = bottom2.scrollTop; 
+            if (st > 50 && st < 55){
+                fullpage_api.moveSectionDown();
+                bottom2.scrollTop = 50;
+            } else if (st < 50) {
+                bottom1.scrollTop = 0;
+                $('.bottom__slides').slick('slickPrev');
+                
+            }
+            lastScrollTop = st <= 0 ? 0 : st;
+        }, false);
         bottom2.onclick = () => {
             $('.bottom__slides').slick('slickPrev');
+            bottom1.scrollTop = 0;
         }
     }
 }, false);
-
